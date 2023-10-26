@@ -5,7 +5,7 @@
  */
 
 $databaseHost = 'localhost';
-$databaseName = 'crud_db';
+$databaseName = 'db_pemesanan_kantin_sekolah';
 $databaseUsername = 'root';
 $databasePassword = '';
 

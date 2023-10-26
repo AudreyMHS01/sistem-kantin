@@ -1,7 +1,7 @@
 <?php
-include_once("../config.php");
+include_once("config.php");
 
-$result = mysqli_query($mysqli, "SELECT * FROM tb_penjual ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM tb_penjual ORDER BY id_penjual DESC");
 ?>
 
 
@@ -23,19 +23,20 @@ $result = mysqli_query($mysqli, "SELECT * FROM tb_penjual ORDER BY id DESC");
             <th>Nama</th>
             <th>Alamat</th>
             <th>No Telp</th>
+            <th>Update</th>
         </tr>
-    </table>
-    <?php
-    while ($user_data = mysqli_fetch_array($result)) {
-        echo "<tr>";
-        echo "<td>" . $user_data['id_jual'] . "</td>";
-        echo "<td>" . $user_data['name'] . "</td>";
-        echo "<td>" . $user_data['alamat'] . "</td>";
-        echo "<td>" . $user_data['no_telp'] . "</td>";
-        echo "<td> <a href='edit.php?id=$user_data[id]'>Edit</a> | <a href='delete.php?id=$user_data[id]'>Delete</a></td></tr>";
-    }
-    ?>
 
+        <?php
+        while ($user_data = mysqli_fetch_array($result)) {
+            echo "<tr>";
+            echo "<td>" . $user_data['id_penjual'] . "</td>";
+            echo "<td>" . $user_data['nama'] . "</td>";
+            echo "<td>" . $user_data['alamat'] . "</td>";
+            echo "<td>" . $user_data['no_hp'] . "</td>";
+            echo "<td> <a href='edit.php?id_penjual=$user_data[id_penjual]'>Edit</a> | <a href='delete.php?id_penjual=$user_data[id_penjual]'>Delete</a></td></tr>";
+        }
+        ?>
+    </table>
 </body>
 
 </html>
